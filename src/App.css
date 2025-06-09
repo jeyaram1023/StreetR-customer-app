@@ -1,0 +1,430 @@
+/* src/App.css */
+:root {
+  --primary: #FF6B00;
+  --primary-dark: #E05E00;
+  --secondary: #4A4A4A;
+  --light: #F5F5F5;
+  --white: #FFFFFF;
+  --gray: #E0E0E0;
+  --dark-gray: #9E9E9E;
+  --success: #4CAF50;
+  --warning: #FF9800;
+  --error: #F44336;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--light);
+  color: #333;
+  line-height: 1.6;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: var(--white);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-bottom: 70px; /* Space for bottom nav */
+}
+
+.app-header {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-logo h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.logo-circle {
+  width: 36px;
+  height: 36px;
+  background-color: var(--white);
+  color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.header-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 auto;
+}
+
+.back-btn, .search-btn, .qr-btn {
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.back-btn:hover, .search-btn:hover, .qr-btn:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--white);
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  border-top: 1px solid var(--gray);
+  max-width: 500px;
+  margin: 0 auto;
+  width: 100%;
+  z-index: 100;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: var(--dark-gray);
+  font-size: 0.8rem;
+  padding: 5px 10px;
+  transition: color 0.2s;
+}
+
+.nav-item.active {
+  color: var(--primary);
+}
+
+.nav-icon {
+  font-size: 1.2rem;
+  margin-bottom: 3px;
+}
+
+.cart-indicator {
+  position: relative;
+}
+
+.cart-indicator::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary);
+  border-radius: 50%;
+}
+
+.home-content {
+  padding: 15px;
+  flex: 1;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0 15px;
+}
+
+.section-icon {
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+
+.section-header h3 {
+  font-size: 1.2rem;
+  color: var(--secondary);
+}
+
+.popular-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.popular-item {
+  display: flex;
+  background: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.popular-image {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.food-img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.dosa {
+  background-color: #FFE0B2;
+}
+
+.vadapav {
+  background-color: #FFCCBC;
+}
+
+.panipuri {
+  background-color: #FFF9C4;
+}
+
+.samosa {
+  background-color: #D7CCC8;
+}
+
+.chole {
+  background-color: #FFECB3;
+}
+
+.idli {
+  background-color: #E0F7FA;
+}
+
+.biryani {
+  background-color: #FFE0B2;
+}
+
+.jalebi {
+  background-color: #FFF9C4;
+}
+
+.like-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(255,255,255,0.8);
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dark-gray);
+  cursor: pointer;
+}
+
+.like-btn.liked {
+  color: var(--error);
+}
+
+.popular-info {
+  padding: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.popular-info h4 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.popular-info p {
+  font-size: 0.85rem;
+  color: var(--dark-gray);
+  margin-bottom: 10px;
+  flex: 1;
+}
+
+.price-like {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.price-like span {
+  font-weight: bold;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.likes-count {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9rem;
+  color: var(--dark-gray);
+}
+
+.likes-count svg {
+  font-size: 0.8rem;
+}
+
+.add-to-cart-btn {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-to-cart-btn:hover {
+  background-color: var(--primary-dark);
+}
+
+.all-items-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.food-card {
+  background: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.food-card-image {
+  height: 120px;
+  position: relative;
+}
+
+.food-card-info {
+  padding: 10px;
+}
+
+.food-card-info h4 {
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+}
+
+.food-card-info p {
+  font-size: 0.8rem;
+  color: var(--dark-gray);
+  margin-bottom: 8px;
+  height: 36px;
+  overflow: hidden;
+}
+
+.food-card-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.food-card-price span {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.food-card-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.card-like-btn, .card-cart-btn {
+  background: none;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.card-like-btn {
+  color: var(--dark-gray);
+}
+
+.card-like-btn.liked {
+  color: var(--error);
+}
+
+.card-cart-btn {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 20px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 107, 0, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--primary);
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Add more styles for other pages as needed */
